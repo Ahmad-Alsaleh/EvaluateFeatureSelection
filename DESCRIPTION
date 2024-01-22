@@ -18,4 +18,5 @@ BugReports: https://github.com/Ahmad-Alsaleh/EvaluateFeatureSelection/issues
 Language: en-US
 Imports: 
     ggplot2,
+    ROCR,
     scales
