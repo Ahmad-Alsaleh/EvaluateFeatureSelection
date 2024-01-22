@@ -24,7 +24,7 @@ get_scree_plot <- function(features_scores, show_names = TRUE) {
     ggplot2::geom_line() +
     ggplot2::labs(x = "Number of Features", y = "Importance Score") +
     ggplot2::scale_x_continuous(labels = function(x) {
-      glue::glue("{x}\n({round(x / length(features.scores) * 100, 1)}%)")
+      glue::glue("{x}\n({round(x / length(features_scores) * 100, 1)}%)")
     }) +
     ggplot2::geom_point()
 
