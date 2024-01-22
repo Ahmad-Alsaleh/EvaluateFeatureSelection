@@ -6,6 +6,8 @@ Authors@R:
            comment = c(ORCID = "YOUR-ORCID-ID"))
 Description: What the package does (one paragraph).
 License: MIT + file LICENSE
+Depends:
+    R (>= 4.1.0)
 Suggests: 
     spelling,
     testthat (>= 3.0.0),
