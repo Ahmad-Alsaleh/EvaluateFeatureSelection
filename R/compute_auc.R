@@ -4,7 +4,8 @@ compute_auc <- function(features, data.train, data.test, predict.func, subset.si
   formula <- features[1:subset.size, ] %>%
     paste0(collapse = "+") %>%
     paste0("y~", .) %>%
-    as.formula()
+  	stats::as.formula()
+
   # fitting model
   model.fit <- model.func(formula = formula, data = data.train, ...)
 
@@ -16,3 +17,4 @@ compute_auc <- function(features, data.train, data.test, predict.func, subset.si
 
   return(AUC)
 }
+
