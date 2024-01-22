@@ -42,5 +42,4 @@ get_auc_plot <- function(dataset, imp.features.names) {
 
   # combining all graphs in one grid ---
   combined_plot <- gridExtra::grid.arrange(SVM.plot, KNN.plot, NB.plot, RF.plot, nrow = 2, ncol = 2)
-  return(combined_plot)
 }
