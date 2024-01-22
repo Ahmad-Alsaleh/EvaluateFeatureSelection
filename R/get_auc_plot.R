@@ -2,7 +2,7 @@
 #'
 #' @param dataset (data.frame) the dataset to be used.
 #'  Last column must be the response variable.
-#' @param imp.features.names (data.frame) each column contains the names
+#' @param imp_features_names (data.frame) each column contains the names
 #'  of the features names sorted from most to least important
 #'
 #' @return (gtable) a plot with the AUCs of the different models

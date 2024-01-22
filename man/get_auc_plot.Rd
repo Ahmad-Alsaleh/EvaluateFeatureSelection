@@ -4,12 +4,14 @@
 \alias{get_auc_plot}
 \title{Generate AUC plots to assess the performance of feature selection methods}
 \usage{
-get_auc_plot(dataset, imp.features.names)
+get_auc_plot(dataset, imp_features_names)
 }
 \arguments{
-\item{dataset}{(data.frame) the dataset to be used. Last column must be the response variable.}
+\item{dataset}{(data.frame) the dataset to be used.
+Last column must be the response variable.}
 
-\item{imp.features.names}{(data.frame) each column contains the names of the features names sorted from most to least important}
+\item{imp_features_names}{(data.frame) each column contains the names
+of the features names sorted from most to least important}
 }
 \value{
 (gtable) a plot with the AUCs of the different models

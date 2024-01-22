@@ -4,10 +4,12 @@
 \alias{get_scree_plot}
 \title{Plot scree plot for feature importance}
 \usage{
-get_scree_plot(features.scores, show.names = TRUE)
+get_scree_plot(features_scores, show_names = TRUE)
 }
 \arguments{
-\item{features.scores}{A vector of feature importance scores}
+\item{features_scores}{A vector of feature importance scores}
+
+\item{show_names}{a boolean indicating whether to show feature names or not}
 }
 \value{
 A ggplot2 object
@@ -16,9 +18,10 @@ A ggplot2 object
 Plot scree plot for feature importance
 }
 \examples{
-features.scores <- c(
-  x1 = 0.8165005, x2 = -0.1178857, x3 = 0.1232284, x4 = -1.4277472, x5 = 1.6594211, x6 = -1.5554892,
-  x7 = -0.7336138, x8 = -0.9416054, x9 = 0.9448299, x10 = -1.3629773
+features_scores <- c(
+  x1 = 0.8165005, x2 = -0.1178857, x3 = 0.1232284, x4 = -1.4277472,
+  x5 = 1.6594211, x6 = -1.5554892, x7 = -0.7336138,
+  x8 = -0.9416054, x9 = 0.9448299, x10 = -1.3629773
 )
-get_scree_plot(features.scores)
+get_scree_plot(features_scores)
 }

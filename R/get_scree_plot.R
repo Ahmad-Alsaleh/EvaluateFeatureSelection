@@ -1,18 +1,18 @@
 #' Plot scree plot for feature importance
 #'
-#' @param features.scores A vector of feature importance scores
-#' @param show.names a boolean indicating whether to show feature names or not
+#' @param features_scores A vector of feature importance scores
+#' @param show_names a boolean indicating whether to show feature names or not
 #'
 #' @return A ggplot2 object
 #' @export
 #'
 #' @examples
-#' features.scores <- c(
+#' features_scores <- c(
 #'   x1 = 0.8165005, x2 = -0.1178857, x3 = 0.1232284, x4 = -1.4277472,
 #'   x5 = 1.6594211, x6 = -1.5554892, x7 = -0.7336138,
 #'   x8 = -0.9416054, x9 = 0.9448299, x10 = -1.3629773
 #' )
-#' get_scree_plot(features.scores)
+#' get_scree_plot(features_scores)
 get_scree_plot <- function(features_scores, show_names = TRUE) {
   features_scores <- sort(features_scores, decreasing = TRUE)
 
