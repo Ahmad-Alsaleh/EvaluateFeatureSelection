@@ -1,5 +1,5 @@
 # Returns a transformation object with reversed logarithmically spaced values ----
-# Used for the x-axis of the plot returned by generatePlot()
+# Used for the x-axis of the plot returned by plot()
 reverselog_trans <- function() {
   trans <- function(x) -log(x, 10)
   inv <- function(x) 10^(-x)
