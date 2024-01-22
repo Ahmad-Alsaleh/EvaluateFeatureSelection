@@ -43,7 +43,10 @@ get_auc_plot <- function(dataset, imp_features_names) {
   # Naive Bayes ---
   message("Naive Bayes")
   nb_predict_func <- function(model_fit, data_test) {
-    stats::predict(model_fit, data_test[, -ncol(data_test)], type = "raw")[, levels(data_test$y)[2]]
+    stats::predict(
+      model_fit, data_test[, -ncol(data_test)],
+      type = "raw"
+    )[, levels(data_test$y)[2]]
   }
   nb_auc <- compute_aucs(
     dataset, imp_features_names, nb_predict_func,

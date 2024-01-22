@@ -9,7 +9,7 @@ auc_plot <- function(auc_values, model_name) {
   melted_auc_values <- reshape2::melt(auc_values, id = "subset.size")
   plot <- ggplot2::ggplot(
     melted_auc_values,
-    ggplot2::aes(x = subset.size, y = value, color = variable)
+    ggplot2::aes_string(x = "subset.size", y = "value", color = "variable")
   ) +
     ggplot2::xlab("Number of Features Used") +
     ggplot2::ylab("AUC") +

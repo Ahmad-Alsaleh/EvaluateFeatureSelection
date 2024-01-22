@@ -56,19 +56,22 @@ compute_aucs <- function(
   }
 
   # cross validation to find AUC values
-  cv_aucs <- parallel::mclapply(folds, mc.cores = cores_n, FUN = function(fold) {
-    # cv.AUCs <- lapply(folds, FUN = function(fold) {
-    for (feature_i in seq_along(imp_features_names)) {
-      for (subset.size_i in seq_along(subset_sizes)) {
-        set.seed(42)
-        aucs[subset.size_i, feature_i] <- compute_auc(
-          imp_features_names[feature_i], dataset[-fold, ], dataset[fold, ],
-          predict_func, subset_sizes[subset.size_i], model_func, ...
-        )
-      } # next subset of features
-    } # next feature selection method
-    return(aucs %>% as.data.frame())
-  })
+  cv_aucs <- parallel::mclapply(folds,
+    mc.cores = cores_n,
+    FUN = function(fold) {
+      # cv.AUCs <- lapply(folds, FUN = function(fold) {
+      for (feature_i in seq_along(imp_features_names)) {
+        for (subset.size_i in seq_along(subset_sizes)) {
+          set.seed(42)
+          aucs[subset.size_i, feature_i] <- compute_auc(
+            imp_features_names[feature_i], dataset[-fold, ], dataset[fold, ],
+            predict_func, subset_sizes[subset.size_i], model_func, ...
+          )
+        } # next subset of features
+      } # next feature selection method
+      return(aucs %>% as.data.frame())
+    }
+  )
 
   # combining AUCs values of the k folds (using the arithmetic mean)
   cv_aucs <- cv_aucs %>%

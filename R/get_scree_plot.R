@@ -19,7 +19,7 @@ get_scree_plot <- function(features_scores, show_names = TRUE) {
   # using scree plot to choose cutoff for top features
   scree_plot <- ggplot2::ggplot(
     data.frame(index = seq_along(features_scores), score = features_scores),
-    ggplot2::aes(x = index, y = score)
+    ggplot2::aes_string(x = "index", y = "score")
   ) +
     ggplot2::geom_line() +
     ggplot2::labs(x = "Number of Features", y = "Importance Score") +
