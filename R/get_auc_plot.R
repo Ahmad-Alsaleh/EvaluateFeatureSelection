@@ -1,45 +1,77 @@
 #' Generate AUC plots to assess the performance of feature selection methods
 #'
-#' @param dataset (data.frame) the dataset to be used. Last column must be the response variable.
-#' @param imp.features.names (data.frame) each column contains the names of the features names sorted from most to least important
+#' @param dataset (data.frame) the dataset to be used.
+#'  Last column must be the response variable.
+#' @param imp.features.names (data.frame) each column contains the names
+#'  of the features names sorted from most to least important
 #'
 #' @return (gtable) a plot with the AUCs of the different models
 #' @export
-get_auc_plot <- function(dataset, imp.features.names) {
+get_auc_plot <- function(dataset, imp_features_names) {
   colnames(dataset)[ncol(dataset)] <- "y"
 
   # SVM ---
   message("SVM")
-  SVM.predict.func <- function(model.fit, data.test) {
-    attr(stats::predict(model.fit, data.test, probability = T), "probabilities")[, levels(data.test$y)[2]]
+  svm_predict_func <- function(model_fit, data_test) {
+    attr(
+      stats::predict(model_fit, data_test, probability = TRUE), "probabilities"
+    )[, levels(data_test$y)[2]]
   }
-  SVM.AUC <- compute_aucs(dataset, imp.features.names, SVM.predict.func, e1071::svm, probability = T)
-  SVM.plot <- auc_plot(SVM.AUC, "SVM")
+  svm_auc <- compute_aucs(dataset, imp_features_names, svm_predict_func,
+    e1071::svm,
+    probability = TRUE
+  )
+  svm_plot <- auc_plot(svm_auc, "SVM")
 
   # KNN (k = sqrt(n)) ---
   message("KNN")
-  KNN.predict.func <- function(model.fit, data.test) {
-    stats::predict(model.fit, data.test[, -ncol(data.test)], type = "prob")[, levels(data.test$y)[2]]
+  knn_predict_func <- function(model_fit, data_test) {
+    stats::predict(
+      model_fit, data_test[, -ncol(data_test)],
+      type = "prob"
+    )[, levels(data_test$y)[2]]
   }
-  KNN.AUC <- compute_aucs(dataset, imp.features.names, KNN.predict.func, e1071::gknn, k = floor(sqrt(nrow(dataset))))
-  KNN.plot <- auc_plot(KNN.AUC, expression(bold(paste("KNN (k = ", sqrt(n), ")"))))
+  knn_auc <- compute_aucs(dataset, imp_features_names, knn_predict_func,
+    e1071::gknn,
+    k = floor(sqrt(nrow(dataset)))
+  )
+  knn_plot <- auc_plot(
+    knn_auc,
+    expression(bold(paste("KNN (k = ", sqrt(n), ")")))
+  )
 
   # Naive Bayes ---
   message("Naive Bayes")
-  NB.predict.func <- function(model.fit, data.test) {
-    stats::predict(model.fit, data.test[, -ncol(data.test)], type = "raw")[, levels(data.test$y)[2]]
+  nb_predict_func <- function(model_fit, data_test) {
+    stats::predict(model_fit, data_test[, -ncol(data_test)], type = "raw")[, levels(data_test$y)[2]]
   }
-  NB.AUC <- compute_aucs(dataset, imp.features.names, NB.predict.func, e1071::naiveBayes)
-  NB.plot <- auc_plot(NB.AUC, "Naive Bayes")
+  nb_auc <- compute_aucs(
+    dataset, imp_features_names, nb_predict_func,
+    e1071::naiveBayes
+  )
+  nb_plot <- auc_plot(nb_auc, "Naive Bayes")
 
   # Random Forest ---
   message("Random Forest")
-  RF.predict.func <- function(model.fit, data.test) {
-    stats::predict(model.fit, data.test[, -ncol(data.test)], type = "prob")[, levels(data.test$y)[2]]
+  rf_predict_func <- function(model_fit, data_test) {
+    stats::predict(
+      model_fit, data_test[, -ncol(data_test)],
+      type = "prob"
+    )[, levels(data_test$y)[2]]
   }
-  RF.AUC <- compute_aucs(dataset, imp.features.names, RF.predict.func, randomForest::randomForest)
-  RF.plot <- auc_plot(RF.AUC, expression(bold(paste("Random Forest (m = ", sqrt(p), ")"))))
+  rf_auc <- compute_aucs(
+    dataset, imp_features_names, rf_predict_func,
+    randomForest::randomForest
+  )
+  rf_plot <- auc_plot(
+    rf_auc,
+    expression(bold(paste("Random Forest (m = ", sqrt(p), ")")))
+  )
 
   # combining all graphs in one grid ---
-  combined_plot <- gridExtra::grid.arrange(SVM.plot, KNN.plot, NB.plot, RF.plot, nrow = 2, ncol = 2)
+  combined_plot <- gridExtra::grid.arrange(svm_plot, knn_plot, nb_plot,
+    rf_plot,
+    nrow = 2, ncol = 2
+  )
+  invisible(combined_plot)
 }
