@@ -1,5 +1,5 @@
 # Returns a transformation object with reversed logarithmically spaced values ----
-# Used for the x-axis of the plot returned by plot()
+# Used for the x-axis of the plot returned by auc_plot()
 reverselog_trans <- function() {
   trans <- function(x) -log(x, 10)
   inv <- function(x) 10^(-x)
