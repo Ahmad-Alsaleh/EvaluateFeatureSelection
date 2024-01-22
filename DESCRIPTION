@@ -8,7 +8,8 @@ Description: What the package does (one paragraph).
 License: MIT + file LICENSE
 Suggests: 
     spelling,
-    testthat (>= 3.0.0)
+    testthat (>= 3.0.0),
+    withr
 Config/testthat/edition: 3
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
@@ -19,10 +20,15 @@ Language: en-US
 Imports: 
     abind,
     caret,
+    e1071,
     ggplot2,
     glue,
+    gridExtra,
+    magrittr,
     parallel,
     parallelly,
+    randomForest,
     reshape2,
     ROCR,
-    scales
+    scales,
+    stats

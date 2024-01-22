@@ -48,6 +48,7 @@ compute_aucs <- function(dataset, imp.features.names, predict.func, model.func, 
 
   # cross validation to find AUC values
   cv.AUCs <- parallel::mclapply(folds, mc.cores = cores_n, FUN = function(fold) {
+  # cv.AUCs <- lapply(folds, FUN = function(fold) {
     for (feature_i in 1:ncol(imp.features.names)) {
       for (subset.size_i in 1:length(subset.sizes)) {
         set.seed(42)
