@@ -13,5 +13,9 @@ Config/testthat/edition: 3
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
-URL: https://github.com/Ahmad-Alsaleh/EvaluateFeatureSelection
+URL: https://github.com/Ahmad-Alsaleh/EvaluateFeatureSelection, https://ahmad-alsaleh.github.io/EvaluateFeatureSelection/
 BugReports: https://github.com/Ahmad-Alsaleh/EvaluateFeatureSelection/issues
+Language: en-US
+Imports: 
+    ggplot2,
+    scales
