@@ -1,6 +1,6 @@
 Package: EvaluateFeatureSelection
 Title: Evaluate Feature Selection Methods Using Supervised Learning
-Version: 0.0.0.9000
+Version: 1.0.0
 Authors@R: 
     person("Ahmad", "Alsaleh", , "ahmed.asaleh2@gmail.com", role = c("aut", "cre"))
 Description: This package generates plots to visualize and assess the performance of feature selection methods using supervised learning.
