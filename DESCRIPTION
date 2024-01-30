@@ -1,10 +1,10 @@
 Package: EvaluateFeatureSelection
-Title: What the Package Does (One Line, Title Case)
+Title: Evaluate Feature Selection Methods Using Supervised Learning
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+    person("Ahmad", "Alsaleh", , "ahmed.asaleh2@gmail.com", role = c("aut", "cre"))
+Description: This package generates plots to visualize and assess the performance of feature selection methods using supervised learning.
+    It also provides functions to plot scree plots to visualize good cutting points for the number of features to be selected.
 License: MIT + file LICENSE
 Depends:
     R (>= 4.1.0)

@@ -4,9 +4,9 @@
 \name{EvaluateFeatureSelection-package}
 \alias{EvaluateFeatureSelection}
 \alias{EvaluateFeatureSelection-package}
-\title{EvaluateFeatureSelection: What the Package Does (One Line, Title Case)}
+\title{EvaluateFeatureSelection: Evaluate Feature Selection Methods Using Supervised Learning}
 \description{
-What the package does (one paragraph).
+This package generates plots to visualize and assess the performance of feature selection methods using supervised learning. It also provides functions to plot scree plots to visualize good cutting points for the number of features to be selected.
 }
 \seealso{
 Useful links:
@@ -18,7 +18,7 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: First Last \email{first.last@example.com} (\href{https://orcid.org/YOUR-ORCID-ID}{ORCID})
+\strong{Maintainer}: Ahmad Alsaleh \email{ahmed.asaleh2@gmail.com}
 
 }
 \keyword{internal}
