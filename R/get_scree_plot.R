@@ -1,7 +1,8 @@
-#' Plot scree plot for feature importance
+#' Generate scree plot showing the feature importance
 #'
 #' @param features_scores A vector of feature importance scores
 #' @param show_names a boolean indicating whether to show feature names or not
+#' @param normalize a boolean indicating whether to use max normalization or not
 #'
 #' @return A ggplot2 object
 #' @export
@@ -13,8 +14,14 @@
 #'   x8 = -0.9416054, x9 = 0.9448299, x10 = -1.3629773
 #' )
 #' get_scree_plot(features_scores)
-get_scree_plot <- function(features_scores, show_names = TRUE) {
+get_scree_plot <- function(
+    features_scores, show_names = TRUE, normalize = TRUE) {
   features_scores <- sort(features_scores, decreasing = TRUE)
+
+  if (normalize) {
+    # divide by the max value
+    features_scores <- features_scores / features_scores[1]
+  }
 
   # using scree plot to choose cutoff for top features
   scree_plot <- ggplot2::ggplot(
@@ -22,10 +29,7 @@ get_scree_plot <- function(features_scores, show_names = TRUE) {
     ggplot2::aes_string(x = "index", y = "score")
   ) +
     ggplot2::geom_line() +
-    ggplot2::labs(x = "Number of Features", y = "Importance Score") +
-    ggplot2::scale_x_continuous(labels = function(x) {
-      glue::glue("{x}\n({round(x / length(features_scores) * 100, 1)}%)")
-    }) +
+    ggplot2::labs(x = "Feature", y = "Importance") +
     ggplot2::geom_point()
 
   if (show_names) {

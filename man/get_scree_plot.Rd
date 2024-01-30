@@ -2,20 +2,22 @@
 % Please edit documentation in R/get_scree_plot.R
 \name{get_scree_plot}
 \alias{get_scree_plot}
-\title{Plot scree plot for feature importance}
+\title{Generate scree plot showing the feature importance}
 \usage{
-get_scree_plot(features_scores, show_names = TRUE)
+get_scree_plot(features_scores, show_names = TRUE, normalize = TRUE)
 }
 \arguments{
 \item{features_scores}{A vector of feature importance scores}
 
 \item{show_names}{a boolean indicating whether to show feature names or not}
+
+\item{normalize}{a boolean indicating whether to use max normalization or not}
 }
 \value{
 A ggplot2 object
 }
 \description{
-Plot scree plot for feature importance
+Generate scree plot showing the feature importance
 }
 \examples{
 features_scores <- c(
