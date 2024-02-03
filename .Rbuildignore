@@ -12,3 +12,4 @@
 ^venv$
 ^\.env$
 ^TODO\.md$
+^CHANGELOG\.md$
