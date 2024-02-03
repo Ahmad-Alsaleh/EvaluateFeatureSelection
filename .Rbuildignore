@@ -11,3 +11,4 @@
 ^\.vscode$
 ^venv$
 ^\.env$
+^TODO\.md$

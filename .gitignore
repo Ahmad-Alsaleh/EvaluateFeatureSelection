@@ -8,3 +8,4 @@ docs
 .vscode
 venv/
 .env
+TODO.md
