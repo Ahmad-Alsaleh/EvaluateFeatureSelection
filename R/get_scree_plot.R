@@ -38,8 +38,8 @@ get_scree_plot <- function(
     }
     scree_plot <- scree_plot + ggplot2::geom_text(
       ggplot2::aes(label = names(features_scores)),
-      hjust = -0.5,
-      vjust = 0.5,
+      hjust = 0,
+      vjust = 0,
       angle = 45
     )
   }
