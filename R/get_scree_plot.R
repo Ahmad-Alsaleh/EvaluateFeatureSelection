@@ -19,8 +19,10 @@ get_scree_plot <- function(
   features_scores <- sort(features_scores, decreasing = TRUE)
 
   if (normalize) {
-    # divide by the max value
-    features_scores <- features_scores / features_scores[1]
+    features_scores <- features_scores / features_scores[1] # max normalization
+    y_axis_label <- "Relative Importance"
+  } else {
+    y_axis_label <- "Importance Score"
   }
 
   # using scree plot to choose cutoff for top features
@@ -29,7 +31,7 @@ get_scree_plot <- function(
     ggplot2::aes_string(x = "index", y = "score")
   ) +
     ggplot2::geom_line() +
-    ggplot2::labs(x = "Feature", y = "Importance") +
+    ggplot2::labs(x = "Feature", y = y_axis_label) +
     ggplot2::geom_point()
 
   if (show_names) {

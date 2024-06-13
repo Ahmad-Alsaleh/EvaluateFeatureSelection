@@ -59,7 +59,7 @@ compute_aucs <- function(
   cv_aucs <- parallel::mclapply(folds,
     mc.cores = cores_n,
     FUN = function(fold) {
-      # cv.AUCs <- lapply(folds, FUN = function(fold) {
+  # cv_aucs <- lapply(folds, FUN = function(fold) {
       for (feature_i in seq_along(imp_features_names)) {
         for (subset.size_i in seq_along(subset_sizes)) {
           set.seed(42)
