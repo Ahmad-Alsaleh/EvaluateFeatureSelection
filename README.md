@@ -12,6 +12,8 @@ status](https://www.r-pkg.org/badges/version/EvaluateFeatureSelection)](https://
 [![R-CMD-check](https://github.com/Ahmad-Alsaleh/EvaluateFeatureSelection/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/Ahmad-Alsaleh/EvaluateFeatureSelection/actions/workflows/R-CMD-check.yaml)
 [![Codecov test
 coverage](https://codecov.io/gh/Ahmad-Alsaleh/EvaluateFeatureSelection/branch/main/graph/badge.svg)](https://app.codecov.io/gh/Ahmad-Alsaleh/EvaluateFeatureSelection?branch=main)
+[![Lifecycle:
+stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 <!-- badges: end -->
 
 Generates plots to visualize and assess the performance of feature
