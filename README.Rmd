@@ -16,10 +16,8 @@ knitr::opts_chunk$set(
 # EvaluateFeatureSelection
 
 <!-- badges: start -->
-[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
-[![CRAN status](https://www.r-pkg.org/badges/version/EvaluateFeatureSelection)](https://CRAN.R-project.org/package=EvaluateFeatureSelection)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![R-CMD-check](https://github.com/Ahmad-Alsaleh/EvaluateFeatureSelection/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/Ahmad-Alsaleh/EvaluateFeatureSelection/actions/workflows/R-CMD-check.yaml)
-[![Codecov test coverage](https://codecov.io/gh/Ahmad-Alsaleh/EvaluateFeatureSelection/branch/main/graph/badge.svg)](https://app.codecov.io/gh/Ahmad-Alsaleh/EvaluateFeatureSelection?branch=main)
 [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 <!-- badges: end -->
 
