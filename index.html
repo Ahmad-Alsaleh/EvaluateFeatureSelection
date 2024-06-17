@@ -62,7 +62,7 @@
 </h1></div>
 <!-- badges: start -->
 
-<p>This package generates plots to visualize and assess the performance of feature selection methods using supervised learning. It also provides functions to plot scree plots to visualize good cutting points for the number of features to be selected.</p>
+<p>Generates plots to visualize and assess the performance of feature selection methods using supervised learning. It also provides functions to plot scree plots to visualize good cutting points for the number of features to be selected.</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
@@ -79,13 +79,12 @@
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/Ahmad-Alsaleh/EvaluateFeatureSelection" class="external-link">EvaluateFeatureSelection</a></span><span class="op">)</span></span>
 <span><span class="va">features_scores</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span>x1 <span class="op">=</span> <span class="fl">0.8165005</span>, x2 <span class="op">=</span> <span class="op">-</span><span class="fl">0.1178857</span>, <span class="va">...</span><span class="op">)</span></span>
 <span><span class="fu"><a href="reference/get_scree_plot.html">get_scree_plot</a></span><span class="op">(</span><span class="va">features_scores</span><span class="op">)</span></span></code></pre></div>
-<div class="float">
-<img src="https://github.com/Ahmad-Alsaleh/EvaluateFeatureSelection/assets/61240880/46da58ea-c7d0-4247-8d8b-af6758d2ff18" alt="BAM Scores Scree Plot"><div class="figcaption">BAM Scores Scree Plot</div>
-</div>
-<p>Similarly, you can use <code>get_auc_plot(...)</code> to evaluate the performance of feature selection methods using supervised learning.</p>
-<div class="float">
-<img src="https://github.com/Ahmad-Alsaleh/EvaluateFeatureSelection/assets/61240880/5684b533-ae91-491e-8584-9f356a909a20" alt="image"><div class="figcaption">image</div>
-</div>
+<figure><img src="https://github.com/Ahmad-Alsaleh/EvaluateFeatureSelection/assets/61240880/46da58ea-c7d0-4247-8d8b-af6758d2ff18" alt="BAM Scores Scree Plot"><figcaption aria-hidden="true">
+BAM Scores Scree Plot
+</figcaption></figure><p>Similarly, you can use <code>get_auc_plot(...)</code> or <code>get_acc_plot(...)</code> to evaluate the performance of feature selection methods using supervised learning and AUC/accuracy as the performance metric.</p>
+<figure><img src="https://github.com/Ahmad-Alsaleh/EvaluateFeatureSelection/assets/61240880/5684b533-ae91-491e-8584-9f356a909a20" alt="image"><figcaption aria-hidden="true">
+image
+</figcaption></figure>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="links">
