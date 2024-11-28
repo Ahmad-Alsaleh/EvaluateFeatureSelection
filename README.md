@@ -38,10 +38,10 @@ get_scree_plot(features_scores)
 ```
 
 <figure>
+<figcaption aria-hidden="true">BAM Scores Scree Plot</figcaption>
 <img
 src="https://github.com/Ahmad-Alsaleh/EvaluateFeatureSelection/assets/61240880/46da58ea-c7d0-4247-8d8b-af6758d2ff18"
 alt="BAM Scores Scree Plot" />
-<figcaption aria-hidden="true">BAM Scores Scree Plot</figcaption>
 </figure>
 
 Similarly, you can use `get_auc_plot(...)` or `get_acc_plot(...)` to
@@ -49,8 +49,8 @@ evaluate the performance of feature selection methods using supervised
 learning and AUC/accuracy as the performance metric.
 
 <figure>
+<figcaption aria-hidden="true">AUC of Different Feature Selection Methods</figcaption>
 <img
 src="https://github.com/Ahmad-Alsaleh/EvaluateFeatureSelection/assets/61240880/5684b533-ae91-491e-8584-9f356a909a20"
 alt="image" />
-<figcaption aria-hidden="true">image</figcaption>
 </figure>
